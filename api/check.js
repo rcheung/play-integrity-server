@@ -1,10 +1,13 @@
 import { google } from "googleapis";
+import { inject } from '@vercel/analytics';
+
 const playintegrity = google.playintegrity('v1');
 
 
 const packageName = process.env.PACKAGE_NAME
 const privatekey = JSON.parse(process.env.GOOGLE_APPLICATION_CREDENTIALS)
 
+inject();
 
 async function getTokenResponse(token) {
 
